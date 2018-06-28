@@ -5,6 +5,7 @@ import App from "./App";
 import registerServiceWorker from "./tool/registerServiceWorker";
 import { createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
+import './asset/css/index.css'
 
 const theme = createMuiTheme({
   palette: {

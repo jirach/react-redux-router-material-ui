@@ -4,7 +4,7 @@ import Header from "./components/common/Header";
 import HomePage from "./components/pages/HomePage";
 import TempPage from "./components/pages/TempPage";
 
-import { Route, HashRouter } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 
 import store from "./util/store";
 import { Provider } from "react-redux";
@@ -12,10 +12,11 @@ import { Provider } from "react-redux";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    height: 430,
+    height: 'calc(100% - 56px)',
     zIndex: 1,
     overflow: "hidden",
     position: "relative",
@@ -35,7 +36,7 @@ class App extends Component {
     const { classes, theme } = this.props;
     return (
       <Provider store={store}>
-        <HashRouter>
+        <BrowserRouter>
           <div className={classes.root}>
             <Header />
             <main className={classes.content}>
@@ -47,7 +48,7 @@ class App extends Component {
               </div>
             </main>
           </div>
-        </HashRouter>
+        </BrowserRouter>
       </Provider>
     );
   }

@@ -9,6 +9,7 @@ import Drawer from "@material-ui/core/Drawer";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import { NavLink } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -59,7 +60,7 @@ class Header extends Component {
   render() {
     const { classes, theme } = this.props;
     return (
-      <div className={'headerWrapper'}>
+      <div className={"headerWrapper"}>
         <AppBar className={classes.appBar}>
           <Toolbar>
             <IconButton
@@ -88,7 +89,8 @@ class Header extends Component {
               keepMounted: true // Better open performance on mobile.
             }}
           >
-            gag
+            <NavLink to="/home">home</NavLink>
+            <NavLink to="/temp">temp</NavLink>
           </Drawer>
         </Hidden>
         <Hidden smDown implementation="css">
@@ -99,7 +101,8 @@ class Header extends Component {
               paper: classes.drawerPaper
             }}
           >
-            gag
+            <NavLink to="/home">home</NavLink>
+            <NavLink to="/temp">temp</NavLink>
           </Drawer>
         </Hidden>
       </div>
