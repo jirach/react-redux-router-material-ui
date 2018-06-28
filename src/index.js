@@ -1,30 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import configureStore from "./store/configureStore";
-import { Provider } from "react-redux";
-import { Route } from "react-router";
-import createHistory from "history/createBrowserHistory";
-import { ConnectedRouter } from "react-router-redux";
-
-import App from "./App";
-import HomePage from "./components/pages/HomePage";
-import TempPage from "./components/pages/TempPage";
-
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import App from "./App"; 
 import registerServiceWorker from "./tool/registerServiceWorker";
+import { createMuiTheme } from '@material-ui/core/styles';
+import blue from '@material-ui/core/colors/blue';
 
-const store = configureStore();
-const history = createHistory();
+const theme = createMuiTheme({
+  palette: {
+    primary: blue,
+  },
+});
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <div>
-        <Route exact path="/" component={App} />
-        <Route path="/home" component={HomePage} />
-        <Route path="/temp" component={TempPage} />
-      </div>
-    </ConnectedRouter>
-  </Provider>,
+    <MuiThemeProvider theme={theme}>
+        <App/>
+    </MuiThemeProvider>,
   document.getElementById("root")
 );
 registerServiceWorker();
