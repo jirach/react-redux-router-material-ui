@@ -1,18 +1,14 @@
 import React, { Component } from "react";
 import Header from "./components/common/Header";
-
+import { Route, BrowserRouter } from "react-router-dom";
+import store from "./util/store";
+import { Provider } from "react-redux";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
 import HomePage from "./components/pages/HomePage";
 import TempPage from "./components/pages/TempPage";
 
-import { Route, BrowserRouter } from "react-router-dom";
-
-import store from "./util/store";
-import { Provider } from "react-redux";
-
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-
-
+// Page styles
 const styles = theme => ({
   root: {
     flexGrow: 1,

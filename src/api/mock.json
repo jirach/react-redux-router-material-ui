@@ -1,0 +1,14 @@
+{
+  "dummy": [
+    {
+      "id": 1,
+      "title": "I'm the first dummy",
+      "content": "Dummy 1 content"
+    },
+    {
+      "id": 2,
+      "title": "I'm the second dummy",
+      "content": "Dummy 2 content"
+    }
+  ]
+}
