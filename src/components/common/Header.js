@@ -8,7 +8,8 @@ import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import { NavLink } from "react-router-dom";
+import LeftMenu from "./LeftMenu";
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 const drawerWidth = 240;
 
@@ -29,24 +30,25 @@ const styles = theme => ({
     width: drawerWidth,
     [theme.breakpoints.up("md")]: {
       position: "relative"
-    }
+    },
+    backgroundColor: blueGrey[800],
+    color: theme.palette.common.white
   }
 });
 
 class Header extends Component {
-
   state = {
     mobileOpen: false
   };
-  
+
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
-  render() {
+  render(props) {
     const { classes, theme } = this.props;
     return (
-      <div className={"headerWrapper"}>
+      <div>
         <AppBar className={classes.appBar}>
           <Toolbar>
             <IconButton
@@ -72,11 +74,10 @@ class Header extends Component {
               paper: classes.drawerPaper
             }}
             ModalProps={{
-              keepMounted: true // Better open performance on mobile.
+              keepMounted: true 
             }}
           >
-            <NavLink to="/home">home</NavLink>
-            <NavLink to="/temp">temp</NavLink>
+            <LeftMenu />
           </Drawer>
         </Hidden>
         <Hidden smDown implementation="css">
@@ -87,8 +88,7 @@ class Header extends Component {
               paper: classes.drawerPaper
             }}
           >
-            <NavLink to="/home">home</NavLink>
-            <NavLink to="/temp">temp</NavLink>
+            <LeftMenu />
           </Drawer>
         </Hidden>
       </div>

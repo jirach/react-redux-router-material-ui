@@ -29,7 +29,7 @@ const styles = theme => ({
 
 class App extends Component {
   render() {
-    const { classes, theme } = this.props;
+    const { classes } = this.props;
     return (
       <Provider store={store}>
         <BrowserRouter>

@@ -5,9 +5,6 @@ import {connect} from "react-redux";
 import * as dummyActions from "../../actions/dummyAction";
 
 class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.actions.getDummy();
