@@ -40,7 +40,7 @@ class LeftMenu extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <div className={classes.topLeftLogo}>myApartment</div>
+        <div className={classes.topLeftLogo}>React</div>
         <div>
           <List component="nav">
             <Link
