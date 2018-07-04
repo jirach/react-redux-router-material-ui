@@ -66,7 +66,7 @@ class Header extends Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="subheading" color="inherit" noWrap>
-              myApartment
+              React
             </Typography>
           </Toolbar>
         </AppBar>
