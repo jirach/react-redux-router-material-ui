@@ -9,3 +9,6 @@ cd react-redux-router-material-ui
 npm install
 npm start
 ```
+
+## License
+[MIT](https://github.com/jirach/react-redux-router-material-ui/blob/master/LICENSE)
