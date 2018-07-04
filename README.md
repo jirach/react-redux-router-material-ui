@@ -1,6 +1,9 @@
 ## react-redux-router-material-ui
 An app template based on React, Redux, react-router, Material-UI.
+
 Also included sample GET call to local API using json-server
+
+![Screenshot](https://github.com/jirach/react-redux-router-material-ui/blob/master/public/Screenshot.png)
 
 ## Installation
 ```
