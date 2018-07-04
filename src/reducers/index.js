@@ -1,10 +1,8 @@
 import {combineReducers} from 'redux';
-import building from './buildingReducer';
-import room from './roomReducer';
+import dummy from './dummyReducer';
 
 const rootReducer = combineReducers({
-  building,
-  room
+  dummy
 });
 
 export default rootReducer;

@@ -9,7 +9,7 @@ import Drawer from "@material-ui/core/Drawer";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import LeftMenu from "./LeftMenu";
-import blueGrey from '@material-ui/core/colors/blueGrey';
+import blueGrey from "@material-ui/core/colors/blueGrey";
 
 const drawerWidth = 240;
 
@@ -37,6 +37,10 @@ const styles = theme => ({
 });
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.handleDrawerToggle = this.handleDrawerToggle.bind(this);
+  }
   state = {
     mobileOpen: false
   };
@@ -47,6 +51,7 @@ class Header extends Component {
 
   render(props) {
     const { classes, theme } = this.props;
+
     return (
       <div>
         <AppBar className={classes.appBar}>
@@ -74,10 +79,10 @@ class Header extends Component {
               paper: classes.drawerPaper
             }}
             ModalProps={{
-              keepMounted: true 
+              keepMounted: true
             }}
           >
-            <LeftMenu />
+            <LeftMenu handleDrawerToggle={this.handleDrawerToggle}/>
           </Drawer>
         </Hidden>
         <Hidden smDown implementation="css">
@@ -88,7 +93,7 @@ class Header extends Component {
               paper: classes.drawerPaper
             }}
           >
-            <LeftMenu />
+            <LeftMenu handleDrawerToggle={this.handleDrawerToggle}/>
           </Drawer>
         </Hidden>
       </div>

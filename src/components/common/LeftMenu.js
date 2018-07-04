@@ -27,6 +27,13 @@ const styles = theme => ({
 });
 
 class LeftMenu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDrawerToggle = this.handleDrawerToggle.bind(this);
+  }
+  handleDrawerToggle = () => {
+    this.props.handleDrawerToggle();
+  };
   render() {
     const { classes } = this.props;
     return (
@@ -34,7 +41,11 @@ class LeftMenu extends React.Component {
         <div className={classes.topLeftLogo}>myApartment</div>
         <div>
           <List component="nav">
-            <Link to="/home" style={{ textDecoration: 'none', color:'inherit' }}>
+            <Link
+              to="/home"
+              style={{ textDecoration: "none", color: "inherit" }}
+              onClick={this.handleDrawerToggle}
+            >
               <ListItem button>
                 <ListItemIcon>
                   <DashboardIcon className={classes.iconColor} />
@@ -45,16 +56,20 @@ class LeftMenu extends React.Component {
                 />
               </ListItem>
             </Link>
-            <Link to="/temp" style={{ textDecoration: 'none', color:'inherit' }}>
-            <ListItem button>
-              <ListItemIcon>
-                <DraftsIcon className={classes.iconColor} />
-              </ListItemIcon>
-              <ListItemText
-                primary="Temp"
-                primaryTypographyProps={{ color: "inherit" }}
-              />
-            </ListItem>
+            <Link
+              to="/temp"
+              style={{ textDecoration: "none", color: "inherit" }}
+              onClick={this.handleDrawerToggle}
+            >
+              <ListItem button>
+                <ListItemIcon>
+                  <DraftsIcon className={classes.iconColor} />
+                </ListItemIcon>
+                <ListItemText
+                  primary="Temp"
+                  primaryTypographyProps={{ color: "inherit" }}
+                />
+              </ListItem>
             </Link>
           </List>
         </div>
