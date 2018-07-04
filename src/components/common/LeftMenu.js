@@ -31,9 +31,11 @@ class LeftMenu extends React.Component {
     super(props);
     this.handleDrawerToggle = this.handleDrawerToggle.bind(this);
   }
+
   handleDrawerToggle = () => {
     this.props.handleDrawerToggle();
   };
+
   render() {
     const { classes } = this.props;
     return (

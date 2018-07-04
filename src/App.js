@@ -8,7 +8,6 @@ import { withStyles } from "@material-ui/core/styles";
 import HomePage from "./components/pages/HomePage";
 import TempPage from "./components/pages/TempPage";
 
-// Page styles
 const styles = theme => ({
   root: {
     flexGrow: 1,

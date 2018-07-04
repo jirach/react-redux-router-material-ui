@@ -41,6 +41,7 @@ class Header extends Component {
     super(props);
     this.handleDrawerToggle = this.handleDrawerToggle.bind(this);
   }
+  
   state = {
     mobileOpen: false
   };
